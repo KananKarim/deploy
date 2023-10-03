@@ -29,7 +29,7 @@ app.get("/pets/:id",(req,res) => {
 
 app.post("/pets",(req,res) => {
     const id = Date.now();
-    pets.push({...JSON.parse(req.body),id})
+    pets.push({...req.body,id})
     return res.json("Pets successfully added!")
 })
 
